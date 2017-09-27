@@ -174,7 +174,6 @@ $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
         @OTHER_NON_CODED@=3cee7fb4-26fe-102b-80cb-0017a47871b2
 
         @NEED_FOLLOW_UP@=9ccfe3b5-3cbe-4d2b-96f3-93d576e73a62
-        @DATE_OF_STARTING_FOLLOW_UP@=4f6089bd-6d3a-4346-9aeb-1a6f852fc5c1
         @REASON_FOR_NOT_DOING_FOLLOW_UP@=f20d0cf4-2b39-4e4e-af91-628b95938f87
         @DISCHARGED@=6340fd67-facb-4a6c-a9d9-f629c9e53053
         @PATIENT_TRANSFERRED_OUT@=3cdd5c02-26fe-102b-80cb-0017a47871b2
@@ -232,6 +231,8 @@ $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
         @referred_for_hearing_screening_at_the_DH@ = 1cc8efe5-24d4-4b9f-91da-558f44e277c7
         @z-score_greater_than_three@ = 09d0d29a-623a-47f3-bedf-a6004bb37764
         @z-score_greater_than_minus_three_and_less_three@ = 78aa809d-5963-4600-b396-05dbb09ecd2d
+        @when_to_start_treatment(coded)@ = 0ea50937-bad3-471a-b9cd-bfd61e0948d1
+        @RETURN_VISIT_DATE@ = 3ce94df0-26fe-102b-80cb-0017a47871b2
 
 
     </macros>
@@ -394,80 +395,80 @@ $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
                     <table>
                         <tr>
                             <td>Does the patient have any of the following danger signs?</td>
-                            <td></td>
-                            <td> Diarhea</td>
+                            <td>&#160;&#160;&#160;&#160;&#160;&#160;</td>
+                            <td> Diarrhea</td>
                             <td>
                                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs conceptId="$@Diarrhea_Danger_signs@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio" />
+                                <obs conceptId="$@Diarrhea_Danger_signs@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
                             </td>
                         </tr>
                         <tr id="row2" class="checkboxGroup">
                             <td>Problems breathing with chest indrawing, rapid breathing, stridor</td>
                             <td>
                                 <obs id="breathingDangerSignsPresentYes" conceptId="$@BREATHING_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+
                                 <obs id="breathingDangerSignsPresentNo" conceptId="$@BREATHING_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+                                &#160;&#160;&#160;&#160;&#160;&#160;
                             </td>
                             <td> Dehydration</td>
                             <td>
                                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs conceptId="$@Dehydration_Danger_signs_Present@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio" />
+                                <obs conceptId="$@Dehydration_Danger_signs_Present@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
                             </td>
                         </tr>
                         <tr id="row3" class="checkboxGroup">
                             <td>Convulsions</td>
                             <td>
                                 <obs id="convulsionsDangerSignsPresentYes" conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                                 <obs id="convulsionsDangerSignsPresentNo" conceptId="$@CONVULSIONS_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
                             </td>
                             <td> Vomiting everything</td>
                             <td>
                                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs conceptId="$@Does_Vomiting_everything@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio" />
+                                <obs conceptId="$@Does_Vomiting_everything@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
                             </td>
                         </tr>
                         <tr id="row4" class="checkboxGroup">
                             <td>Lethargy or unresponsiveness</td>
                             <td>
                                 <obs id="lethargyDangerSignsPresentYes" conceptId="$@LETHARGY_OR_UNRESPONSIVENESS_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                                 <obs id="lethargyDangerSignsPresentNo" conceptId="$@LETHARGY_OR_UNRESPONSIVENESS_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+                                &#160;&#160;&#160;&#160;&#160;&#160;
                             </td>
                             <td> Palmo-plantar pallor</td>
                             <td>
                                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs conceptId="$@Palmo-plantar_pallor_Danger_signs_present@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio" />
+                                <obs conceptId="$@Palmo-plantar_pallor_Danger_signs_present@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
                             </td>
                         </tr>
                         <tr id="row5" class="checkboxGroup">
                             <td>Umbilical cord redness</td>
                             <td>
                                 <obs id="umbilicalDangerSignsPresentYes" conceptId="$@UMBILICAL_CORD_REDNESS_DANGER_SIGNS@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                                 <obs id="umbilicalDangerSignsPresentNo" conceptId="$@UMBILICAL_CORD_REDNESS_DANGER_SIGNS@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+                                &#160;&#160;&#160;&#160;&#160;&#160;
                             </td>
                             <td> History of fever</td>
                             <td>
                                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs conceptId="$@History_of_fever@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio" />
+                                <obs conceptId="$@History_of_fever@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
                             </td>
                         </tr>
                         <tr id="row6" class="checkboxGroup">
                             <td>Stiff neck or bulging fontanelles</td>
                             <td>
                                 <obs id="stiffNeckDangerSignsPresentYes" conceptId="$@STIFF_NECK_OR_BULGING_FONTANELLES_DANGER_SIGNS_PRESENT@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" />
-                                &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                                 <obs id="stiffNeckDangerSignsPresentNo" conceptId="$@STIFF_NECK_OR_BULGING_FONTANELLES_DANGER_SIGNS_PRESENT@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" />
+                                &#160;&#160;&#160;&#160;&#160;&#160;
                             </td>
                             <td> Bilateral pitting oedema</td>
                             <td>
                                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                                <obs conceptId="$@Bilateral_pitting_oedema_danger_signs_present@" answerConceptIds="$@NO@,$@YES@" answerLabels="No,Yes" style="radio" />
+                                <obs conceptId="$@Bilateral_pitting_oedema_danger_signs_present@" answerConceptIds="$@YES@,$@NO@" answerLabels="Yes,No" style="radio" />
                             </td>
                         </tr>
                         <tr id="row7" class="checkboxGroup">
-                            <td colspan="2"><br/>If yes above, was:
+                            <td colspan="4"><br/>If yes above, was:
                                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                                 <obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
                                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
@@ -501,7 +502,7 @@ $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
                             </td>
                         </tr>
                         <tr id="row9" class="checkboxGroup">
-                            <td colspan="2"><br/>If yes above, was:
+                            <td colspan="4"><br/>If yes above, was:
                                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                                 <obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
                                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
@@ -518,7 +519,7 @@ $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
             <td>
                 <table>
                     <tr>
-                        <td>Respiratory Rate:<obs conceptId="$@RESPIRATORY_RATE@" labelText="" />°C</td>
+                        <td>Respiratory Rate:<obs conceptId="$@RESPIRATORY_RATE@" labelText="" />Breaths/minute</td>
                         <td align="left">Normal Respiratory Rates for age:<br/>
                             *Infant &lt;2 months:  &lt;60 breaths per minute<br/>
                             *Infant 2-12 months:  &lt;50 breaths per minute<br/>
@@ -535,7 +536,7 @@ $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
                         </td>
                     </tr>
                     <tr id="row11" class="checkboxGroup">
-                        <td colspan="2"><br/>If yes above, was:
+                        <td colspan="4"><br/>If yes above, was:
                             &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
                             <obs id="actionTakenPhysicianNotified" conceptId="$@PDC_DANGER_SIGNS_ACTION_TAKEN@" answerConceptId="$@PHYSICIAN_NOTIFIED@" answerLabel="physician notified" style="checkbox" />
                             &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
@@ -583,7 +584,6 @@ $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
                     <tr >
                         <td><obs conceptId="$@WEIGHT@" labelText="" /><br/>kg</td>
                         <td><obs conceptId="$@HEIGHT@" labelText="" /><br/>cm
-                            <br /> <obs conceptId="$@INTERVAL_GROWTH@" labelText="" />
                         </td>
                         <td align="left" class="checkboxGroupIG"><obs conceptId="$@INTERVAL_GROWTH@" labelText="" /><br/>
 
@@ -624,10 +624,10 @@ $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
             </td>
         </tr>
         <!--<tr class="disabled">-->
-            <!--<td>Traditional Medicine</td>-->
-            <!--<td>Has the patient received any traditional-->
-                <!--medications/treatments? ☐ Yes___________________________________☐ No-->
-            <!--</td>-->
+        <!--<td>Traditional Medicine</td>-->
+        <!--<td>Has the patient received any traditional-->
+        <!--medications/treatments? ☐ Yes___________________________________☐ No-->
+        <!--</td>-->
         <!--</tr>-->
         <tr>
             <td>
@@ -648,7 +648,7 @@ $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
                 <obs conceptId="$@Foods/liquids_only_child_feeding_on@" />
                 <br/>
                 <label class="disabled">
-                 Is the child being fed appropriately for age? ☐ Yes ☐ No If no, specify what is not being done:
+                    Is the child being fed appropriately for age? ☐ Yes ☐ No If no, specify what is not being done:
                 </label>
             </td>
         </tr>
@@ -676,6 +676,7 @@ $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
             <td>
                 Does the child require treatment for malnutrition/growth failure in PDC?
                 <obs conceptId="$@Require_malnutrition/growth_failure_treatment@" answerConceptIds="$@NO@,$@YES@,$@previously_started@,$@Start_today@" answerLabels="NO,YES,Previously started,start today" style="radio"/>
+                <obs conceptId="$@when_to_start_treatment(coded)@" answerConceptIds="$@previously_started@,$@Start_today@" answerLabels="Previously started,start today" style="radio"/>
             </td>
         </tr>
         <tr>
@@ -797,7 +798,7 @@ $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
             </td>
             <td>
                 <label class="disabled">
-                    Child unable to fix and follow objects with their eyes? ☐ yes ☐ no ☐ N/A child age &#160; 1 month
+                    Is Child unable to fix and follow objects with their eyes? ☐ yes ☐ no
                     <br/>
                     Wandering eyes or squinting? ☐ yes ☐ no
                     <br/>
@@ -852,7 +853,7 @@ $j('td.checkboxGroupFeeding input[type=checkbox]').each(function() {
         </tr>
         <tr id="row20" class="checkboxGroup">
             <td>Follow-up needed:&#160;&#160;&#160;&#160;&#160;&#160;&#160;
-                <obs id="patientNeedsFollowUpYes" conceptId="$@NEED_FOLLOW_UP@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs conceptId="$@DATE_OF_STARTING_FOLLOW_UP@"  allowFutureDates="true" labelText="" />
+                <obs id="patientNeedsFollowUpYes" conceptId="$@NEED_FOLLOW_UP@" answerConceptId="$@YES@" answerLabel="Yes" style="checkbox" /> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs conceptId="$@RETURN_VISIT_DATE@"  allowFutureDates="true" labelText="" />
                 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <obs id="patientNeedsFollowUpNo" conceptId="$@NEED_FOLLOW_UP@" answerConceptId="$@NO@" answerLabel="No" style="checkbox" /></td>
         </tr>
         <tbody id="toggleable1">

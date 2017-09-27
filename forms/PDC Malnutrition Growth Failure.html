@@ -44,6 +44,9 @@
         @Change_food/drink_consistency@ = 6b91812d-2c02-4e72-baa2-f7b1c0791c89
         @Continue_formula@ = c7c85e03-670d-4964-a7c9-0075de1b46bd
         @Referred_to_HC@ = eccaa677-0aaa-4d3c-b4a0-42b2005a704e
+        @Other_Feeding_Intervetion@ = ffc14cc3-cdda-467f-8b39-71fb1e41d210
+        @Feeding_child_with_poor_appetite@ = 05ea6cda-4dd8-47e5-893d-1da1dac3b9c0
+
 
 
         <!-- Imported ones -->
@@ -260,8 +263,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <obs conceptId="$@Previous_visit_Classification@" answerConceptIds="$@Green_visit_class@,$@Yellow_visit_class@,$@Red(HC)@,$@Red(DH_transit)_visit_class@,$@Referred_to_HC_malnutririon_program@"
-                             answerLabels="Green,Yellow,Red(HC),Red(DH transfer),Referred to HC malnutrition program" style="radio"/>
+                        <obs conceptId="$@Previous_visit_Classification@" answerConceptIds="$@Green_visit_class@,$@Yellow_visit_class@,$@Red(HC)@,$@Red(DH_transit)_visit_class@"
+                             answerLabels="Green,Yellow,Red(HC),Red(DH transfer)" style="radio"/>
                     </td>
                 </tr>
                 <tr>
@@ -271,8 +274,8 @@
                 </tr>
                 <tr>
                     <td>
-                        <obs conceptId="$@Current_Visit_Classification@" answerConceptIds="$@Green_visit_class@,$@Yellow_visit_class@,$@Red(HC)@,$@Red(DH_transit)_visit_class@,$@Referred_to_HC_malnutririon_program@
-                        ,$@Currently_in_HC_Malnutrition_program@" answerLabels="Green,Yellow,Red(HC),Red(DH transfer),Referred to HC malnutrition program,Currently in HC malnutrition program" style="radio"/>
+                        <obs conceptId="$@Current_Visit_Classification@" answerConceptIds="$@Green_visit_class@,$@Yellow_visit_class@,$@Red(HC)@,$@Red(DH_transit)_visit_class@
+                        ,$@Currently_in_HC_Malnutrition_program@" answerLabels="Green,Yellow,Red(HC),Red(DH transfer),Referred to HC malnutrition program" style="radio"/>
                     </td>
                 </tr>
                 <tr>
@@ -318,7 +321,7 @@
                         <obs conceptId="$@Maternal_Food_Package@" answerConceptIds="$@NO@,$@2-week@,$@1-month@" answerLabels="No Yes:,2-week,1-month" style="radio"/>
                         <br/>
                         if green,end on:
-                        <obs conceptId="$@Maternal_Food_Package_End_Time@"/>
+                        <obs conceptId="$@Maternal_Food_Package_End_Time@" allowFutureDates="true"/>
                     </td>
                 </tr>
                 <tr>
@@ -340,10 +343,12 @@
                         <br/>
                         <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Hygiene_and_sanitation@" answerLabel="Improve hygiene/sanitation" style="checkbox"/>
                         <br/>
+                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Feeding_child_with_poor_appetite@" answerLabel="Feeding child with poor appetit" style="checkbox"/>
+                        <br/>
                         <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@High_energy_foods@" answerLabel="Add high energy foods" style="checkbox"/>
                         <br/>
-                        <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@Continue_formula@" answerLabel="Continue formula" style="checkbox"/>
                         <obs conceptId="$@Feeding_Intervention@" answerConceptId="$@OTHER_NON-CODED@" answerLabel="Other" style="checkbox"/>
+                        ,specify:<obs conceptId="$@Other_Feeding_Intervetion@"/>
                     </td>
                 </tr>
                 <tr>
@@ -363,8 +368,9 @@
                     </th>
                 </tr>
                 <tr>
-                    <td style="color:red">
-                          Waiting for Response!
+                    <td >
+                        Give follo-up appointment based on results of growth failure algorithm.<br/>
+                        Document RDV date on the visit form.
                     </td>
                 </tr>
             </table>
